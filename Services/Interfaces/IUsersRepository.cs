@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using CelsiaProject.Models;
+using Microsoft.AspNetCore.Mvc;
 
-namespace CelsiaProject.Services.Interfaces
+namespace CelsiaProject.Services
 {
-    public interface IUsersRepository
+    public interface IUserRepository
     {
-        
+        public void Add(User user);
     }
 }
