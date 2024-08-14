@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center justify-content-center">
+    <h2>Gestionar Transacciones Financieras de Celsia</h2>
+
+    <div class="d-flex gap-2 text-center mt-3 mb-5">
+        <a asp-action="Index" asp-controller="Transactions" class="btn btn-info">Gestionar Transacciones</a>
+        <a asp-action="Index" asp-controller="Customers" class="btn btn-warning">Gestionar Customers</a>
+        <a asp-action="Index" asp-controller="Invoices" class="btn btn-dark">Gestionar Invoices</a>
+    </div>
+
+    <h3>Importar Transacciones de Excel</h3>
+    <form method="post" asp-controller="Excel" asp-action="ImportExcel" enctype="multipart/form-data">
+        <div class="d-flex justify-content-center mb-3"><input class="form-control w-50" type="file" name="excel"
+                id="excel"></div>
+
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start">
+            <button class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder">Importar</button>
+        </div>
+    </form>
+
+    <a class="btn btn-danger mt-3" asp-action="Logout" asp-controller="Login">Cerrar Sesión</a>
 </div>

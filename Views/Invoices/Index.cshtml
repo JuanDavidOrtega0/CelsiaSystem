@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row justify-content-center text-center mb-4 mt-3">
+        <div class="col-md-2">
+            <a type="button" class="btn btn-success" asp-controller="Invoices" asp-action="Create">Add Invoice</a>
+        </div>
+        <div class="col-md-8">
+            <form asp-controller="Invoices" asp-action="Search" method="get">
+                <div class="input-group">
+                    <input placeholder="Buscar" class="form-control" name="searchString" aria-describedby="id">
+                    <button type="submit" class="btn btn-secondary" id="id">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h1>Invoices</h1>
+    </div>
+
+    <table class="table mt-3">
+        <thead class="table table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Period</th>
+                <th scope="col">Invoiced Amount</th>
+                <th scope="col">AmountPaid</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.Id</td>
+                    <td>@customer.Period</td>
+                    <td>$@customer.InvoicedAmount</td>
+                    <td>$@customer.AmountPaid</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

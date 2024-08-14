@@ -1,0 +1,47 @@
+@model CelsiaProject.Models.Invoice
+
+<body>
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+            <div class="card p-4 bg-dark text-light">
+                <h2 class="text-center">Create Invoice</h2>
+                <form asp-controller="Invoices" asp-action="Create" method="post">
+
+                    <div class="row mt-3">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-2">
+                            <label class="form-label" asp-for="Id">Id</label>
+                            <input asp-for="Id" type="text" class="form-control" />
+                            <span asp-validation-for="Id" class="text-danger"></span>
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-2">
+                            <label class="form-label" asp-for="Period">Period</label>
+                            <input asp-for="Period" type="text" class="form-control" />
+                            <span asp-validation-for="Period" class="text-danger"></span>
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-2">
+                            <label class="form-label" asp-for="InvoicedAmount">Invoiced Amount</label>
+                            <input asp-for="InvoicedAmount" type="number" class="form-control" />
+                            <span asp-validation-for="InvoicedAmount" class="text-danger"></span>
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-2">
+                            <label class="form-label" asp-for="AmountPaid">Amount Paid</label>
+                            <input asp-for="AmountPaid" type="number" class="form-control" />
+                            <span asp-validation-for="AmountPaid" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center mt-3">
+                        <input type="submit" class="btn btn-success form-control" value="Create">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
